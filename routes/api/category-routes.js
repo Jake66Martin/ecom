@@ -5,16 +5,16 @@ const { Category, Product } = require('../../models');
 
 
 
-  router.get('/', async (req, res) => {
-    try {
-      const categoryData = await Category.findAll({
-        include: [{ model: Product }],
-      });
-      res.status(200).json(categoryData);
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
+router.get('/', async (req, res) => {
+  try {
+    const categoryData = await Category.findAll({
+      include: [{ model: Product }],
+    });
+    res.status(200).json(categoryData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 
 
@@ -39,38 +39,43 @@ router.get('/:id', async (req, res) => {
 
 
 router.post('/', async (req, res) => {
-  
+
   try {
-  const newCat = await Category.create(req.body)
-  if (newCat) {
-    return res.status(201).json(newCat)
+    const newCat = await Category.create(req.body)
+    if (newCat) {
+      return res.status(201).json(newCat)
+    }
+  } catch (err) {
+    return res.status(404).json(err)
   }
-} catch (err) {
-  return res.status(404).json(err)
-}
-  
+
 });
 
 
 
-// router.put('/:id', (req, res) => {
-//   // update a category by its `id` value
-// });
+router.put('/:id', (req, res) => {
+  // update a category by its `id` value
+});
 
 
 
 router.delete('/:id', async (req, res) => {
+
   try {
-const newList = await Category.destroy({
-  where: {
-    id: req.params.id
-  }
-})
-if (newList) {
-return res.status(200).res.json(newList)
-}
+    const delId = await Category.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+
+    if (!delId) {
+      return res.status(200).res.json(delId)
+    }
+
   } catch (err) {
+
     res.status(500).json(err);
+
   }
 });
 

@@ -36,13 +36,24 @@ router.get('/:id', async (req, res) => {
 
 
 
-router.post('/', (req, res) => {
-  // create a new tag
+router.post('/', async (req, res) => {
+  try {
+    const newTag = await Tag.create(req.body)
+    if (newTag) {
+      return res.status(201).json(newTag)
+    }
+  } catch (err) {
+    return res.status(404).json(err)
+  }
 });
+
+
 
 router.put('/:id', (req, res) => {
   // update a tag's name by its `id` value
 });
+
+
 
 router.delete('/:id', (req, res) => {
   // delete on tag by its `id` value
