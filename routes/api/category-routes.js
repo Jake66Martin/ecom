@@ -80,16 +80,18 @@ router.delete('/:id', async (req, res) => {
       where: {
         id: req.params.id
       }
-    })
+    });
 
     if (delId) {
-      return res.status(200).res.json(delId)
+      
+      return res.status(200).json({delId});
+    } else {
+      
+      return res.status(404).json({ message: 'Row not found' });
     }
-
   } catch (err) {
-
+    
     res.status(500).json(err);
-
   }
 });
 
