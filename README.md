@@ -21,11 +21,6 @@ This application is used for data storage.
 ## <h2 id = "license">License</h2>
 No license has been chosen for this project..      
 
-## Video walkthrough
-https://drive.google.com/file/d/1NolFDaiLitZpLaEhwG-naGv2-hW2KTls/view
-      
-
-
 
 ## <h2 id ="contributing">Contributing</h2>
 N/A
@@ -37,3 +32,6 @@ N/A
 My Github username is jake66martin.   
 My github profile link is www.github.com/jake66martin   
 You can also contact me with any further questions at jake66martin@hotmail.com  
+
+## Video walkthrough
+https://drive.google.com/file/d/1NolFDaiLitZpLaEhwG-naGv2-hW2KTls/view
