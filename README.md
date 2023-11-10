@@ -20,6 +20,9 @@ This application is used for data storage.
 
 ## <h2 id = "license">License</h2>
 No license has been chosen for this project..      
+
+## Video walkthrough
+https://drive.google.com/file/d/1NolFDaiLitZpLaEhwG-naGv2-hW2KTls/view
       
 
 
